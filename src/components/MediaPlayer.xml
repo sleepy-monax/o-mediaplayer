@@ -1,0 +1,6 @@
+<templates>
+  <t t-name="o-mediaplayer-MediaPlayer" owl="1">
+    Media player works!
+    <MediaControls/>
+  </t>
+</templates>
