@@ -3,7 +3,7 @@ import terser from "@rollup/plugin-terser";
 import git from "git-rev-sync";
 import dts from "rollup-plugin-dts";
 import typescript from "rollup-plugin-typescript2";
-import { version } from "./package.json";
+import { name, version } from "./package.json";
 
 let commitHash = "";
 
@@ -12,6 +12,8 @@ try {
 } catch (_) { }
 
 const OUTRO = `
+const __info__ = {};
+__info__.name = '${name}';
 __info__.version = '${version}';
 __info__.date = '${new Date().toISOString()}';
 __info__.hash = '${commitHash}';
@@ -25,9 +27,9 @@ __info__.hash = '${commitHash}';
  */
 function getConfigForFormat(format, minified = false) {
   return {
-    file: minified ? `dist/o-mediaplayer.${format}.min.js` : `dist/o-mediaplayer.${format}.js`,
+    file: minified ? `dist/${name}.${format}.min.js` : `dist/${name}.${format}.js`,
     format,
-    name: "o_mediaplayer",
+    name,
     extend: true,
     globals: { "@odoo/owl": "owl" },
     outro: OUTRO,
@@ -46,9 +48,9 @@ export default (commandLineArgs) => {
     input = "build/js/index.js";
     output = [
       {
-        file: `build/o_mediaplayer.js`,
+        file: `build/${name}.js`,
         format: "iife",
-        name: "o_mediaplayer",
+        name,
         extend: true,
         outro: OUTRO,
         globals: { "@odoo/owl": "owl" },
@@ -78,7 +80,7 @@ export default (commandLineArgs) => {
       },
       {
         input: "dist/types/index.d.ts",
-        output: [{ file: "dist/o-mediaplayer.d.ts", format: "es" }],
+        output: [{ file: `dist/${name}.d.ts`, format: "es" }],
         plugins: [dts(), nodeResolve()],
       },
     ];

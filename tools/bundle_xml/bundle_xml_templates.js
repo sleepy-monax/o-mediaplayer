@@ -64,7 +64,7 @@ async function writeOwlTemplateBundleToFile(dir, outro = "") {
     templateBundle += "<!--" + outro + "-->";
   }
   templateBundle = prettify(templateBundle);
-  writeToFile(path.join(__dirname, `../../${dir}/o_spreadsheet.xml`), templateBundle);
+  writeToFile(path.join(__dirname, `../../${dir}/o_mediaplayer.xml`), templateBundle);
   process.stdout.write("done\n");
 }
 
@@ -73,6 +73,7 @@ function prettify(xmlString) {
     return prettier.format(xmlString, { ...config["prettier"], parser: "xml" });
   } catch (error) {
     console.error("Could not prettify xml, probably because of a syntax error.");
+    console.error(error);
     return xmlString;
   }
 }

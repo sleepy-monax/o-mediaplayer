@@ -1,4 +1,4 @@
-const { version } = require("../../package.json");
+const { name, version } = require("../../package.json");
 const git = require("git-rev-sync");
 const bundle = require("./bundle_xml_templates");
 const parseArgs = require("minimist");
@@ -11,9 +11,11 @@ let commitHash = "";
 
 try {
   commitHash = git.short();
-} catch (_) {}
+} catch (_) { }
 
 const OUTRO = `
+  const __info__ = {};
+  __info__.name = '${name}';
   __info__.version = '${version}';
   __info__.date = '${new Date().toISOString()}';
   __info__.hash = '${commitHash}';
