@@ -43,11 +43,15 @@ css`
         &:hover {
             fill: #ccc;
         }
+
+        &:active {
+            fill: #aaa;
+        }
     }
 }
 `;
 
-export class IconButton extends Icon {
+export class IconButton extends Component {
     static props = {
         icon: String,
         onClick: Function,
@@ -59,5 +63,9 @@ export class IconButton extends Icon {
     </div>
     `;
 
+    declare iconTemplate: string;
 
+    setup() {
+        this.iconTemplate = `o-mediaplayer-icon.${this.props.icon}`;
+    }
 }

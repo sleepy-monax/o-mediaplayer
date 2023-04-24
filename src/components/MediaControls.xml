@@ -1,5 +1,6 @@
 <templates>
   <t t-name="o-mediaplayer-MediaControls" owl="1">
+    <input type="range" />
     <div class="d-flex">
       <IconButton icon="'play'" />
       <IconButton icon="'volume-high'" />
