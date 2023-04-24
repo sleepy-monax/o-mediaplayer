@@ -10,7 +10,7 @@ class Demo extends Component {
     static template = xml`
         <div>
             <MediaPlayer 
-                src="'https://file-examples.com/storage/feee5c69f0643c59da6bf13/2017/04/file_example_MP4_1920_18MG.mp4'"
+                src="'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_30MB.mp4'"
                 thumbnail="'https://upload.wikimedia.org/wikipedia/commons/b/b7/Earth_%2816530938850%29.jpg'"/>
         </div>
     `;

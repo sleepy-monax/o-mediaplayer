@@ -1,8 +1,13 @@
 import { Component, xml } from "@odoo/owl"
 
 export class Spinner extends Component {
+    static props = {
+        class: String,
+    };
+
     static template = xml`
-        <svg xmlns="http://www.w3.org/2000/svg" class="o_spinner" viewBox="0 0 50 50" width="50" height="50">
+    <div t-att-class="this.props.class" >
+        <svg class="spinner-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
             <style>
                 @keyframes dash {
                     0% {
@@ -26,15 +31,16 @@ export class Spinner extends Component {
                         transform: rotate(360deg);
                     }
                 }
-                svg {
+                #spinner-svg {
                     animation: rotate 1s linear infinite;
                 }
-                circle {
+                #spinner {
                     stroke-dasharray: 120, 120;
                     animation: dash 2.5s ease infinite;
                 }
             </style>
-            <circle cy="25" cx="25" r="19" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle id="spinner" cy="25" cx="25" r="19" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
         </svg>
+    </div>
     `;
 }

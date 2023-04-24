@@ -1,5 +1,11 @@
 <templates>
   <t t-name="o-mediaplayer-MediaControls" owl="1">
-    Media controls works!
+    <div class="d-flex">
+      <IconButton icon="'play'" />
+      <IconButton icon="'volume-high'" />
+      <input class="o-mediaplayer-volum" type="range" />
+      <div class="flex-grow-1" />
+      <IconButton icon="'fullscreen'" />
+    </div>
   </t>
 </templates>

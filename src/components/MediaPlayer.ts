@@ -1,17 +1,12 @@
 import { Component, useRef, useState } from "@odoo/owl";
 import { MediaControls } from "./MediaControls";
 import { Spinner } from "./icons/Spinner";
-import { css } from "./css";
+import { IconButton } from "./icons/Icon";
 
-css`
-.o-mediaplayer-container {
-    background-color: black;
-}
-`;
 
 export class MediaPlayer extends Component {
     static template = "o-mediaplayer-MediaPlayer";
-    static components = { MediaControls, Spinner };
+    static components = { MediaControls, Spinner, IconButton };
 
     static props = {
         src: String,
