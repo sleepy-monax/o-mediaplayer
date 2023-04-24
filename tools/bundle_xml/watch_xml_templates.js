@@ -1,6 +1,8 @@
 const watch = require("node-watch");
 const bundle = require("./bundle_xml_templates");
 
+bundle.writeOwlTemplateBundleToFile("build");
+
 const watcher = watch("./src", { filter: /\.xml$/, recursive: true }, (ev, name) => {
   console.log(`\nFile ${name}: ${ev}`);
   bundle.writeOwlTemplateBundleToFile("build");
