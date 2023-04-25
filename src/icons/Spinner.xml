@@ -34,7 +34,10 @@
                     animation: dash 2.5s ease infinite;
                     }
                 </style>
-                <circle id="spinner" cy="25" cx="25" r="19" stroke="#fff" stroke-width="2"
+                <circle
+                    id="spinner"
+                    cy="25" cx="25" r="19"
+                    stroke="#fff" stroke-width="2"
                     fill="none" stroke-linecap="round" />
             </svg>
         </div>

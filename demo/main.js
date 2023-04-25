@@ -19,9 +19,14 @@ class Demo extends Component {
 };
 
 whenReady(async () => {
-    const templates = await (await fetch("../build/o_mediaplayer.xml")).text();
-    const root = new App(Demo);
-    root.addTemplates(templates);
-    root.mount(document.body, { dev: true });
+    try {
+        const templates = await (await fetch("../build/o_mediaplayer.xml")).text();
+        const root = new App(Demo);
+        root.addTemplates(templates);
+        root.mount(document.body, { dev: true });
+    } catch (e) {
+        console.error(e)
+        console.error(e.cause)
+    }
 });
 

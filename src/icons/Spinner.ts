@@ -1,6 +1,6 @@
 import { Component } from "@odoo/owl"
 
-export class Spinner extends Component {
+export default class Spinner extends Component {
     static props = {
         class: String,
     };
