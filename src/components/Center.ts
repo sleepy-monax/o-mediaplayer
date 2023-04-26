@@ -9,7 +9,7 @@ css`
 }
 `
 
-export default class Center extends Component {
+export class Center extends Component {
     static template = xml`
         <div class="o-mediaplayer-center">
             <t t-slot="default" />

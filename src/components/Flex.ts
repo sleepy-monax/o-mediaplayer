@@ -15,7 +15,7 @@ css`
 }
 `
 
-export default class HFlex extends Component {
+export class HFlex extends Component {
     static template = xml`
         <div class="o-mediaplayer-hflex">
             <t t-slot="default" />

@@ -14,7 +14,7 @@ css`
 /**
  * This an overlay that is used to display controls on top of the media player.
  */
-export default class Overlay extends Component {
+export class Overlay extends Component {
     static template = xml`
         <div class="o-mediaplayer-overlay">
             <t t-slot="default" />

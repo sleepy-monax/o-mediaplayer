@@ -1,9 +1,9 @@
 import { xml } from "@odoo/owl";
-import IconButton from "../icons/IconButton";
-import BaseControl from "./BaseControl";
+import { IconButton } from "../icons/IconButton";
+import { BaseControl } from "./BaseControl";
 import { TOGGLE } from "../utils/toggle";
 
-export default class MuteControl extends BaseControl {
+export class MuteControl extends BaseControl {
     static components = [IconButton]
     static template = xml`
         <IconButton t-if="player.isMuted" icon="volume-mute" onClick="onClick" />

@@ -16,7 +16,7 @@ css`
 }
 `;
 
-export default class Icon extends Component<IIconProps> {
+export class Icon extends Component<IIconProps> {
     static props = {
         icon: String,
     };

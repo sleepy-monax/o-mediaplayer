@@ -1,5 +1,5 @@
 import { Component, useSubEnv, xml } from "@odoo/owl";
-import IMediaPlayer from "./model/IMediaPlayer";
+import { IMediaPlayer } from "./model/IMediaPlayer";
 
 interface IPlayerScalfoldProps {
     player: IMediaPlayer;
@@ -10,7 +10,7 @@ interface IPlayerScalfoldProps {
  * current state of the player. It doesn't provide any control, it just provides
  * some slots for the controls to be placed in.
  */
-export default class PlayerScafold extends Component<IPlayerScalfoldProps> {
+export class PlayerScafold extends Component<IPlayerScalfoldProps> {
     static template = xml`
         <div>
             <video class="o-mediaplayer-media" t-ref="o-mediaplayer-media">

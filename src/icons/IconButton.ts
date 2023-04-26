@@ -27,7 +27,7 @@ css`
     }
 `;
 
-export default class IconButton extends Component<IIconButtonProps> {
+export class IconButton extends Component<IIconButtonProps> {
     static props = {
         icon: String,
         onClick: Function,

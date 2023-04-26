@@ -25,7 +25,7 @@ css`
 /**
  * Customisable input range component.
  */
-export default class Range extends Component<IRangeProps> {
+export class Range extends Component<IRangeProps> {
     static template = xml`
         <div class="o-mediarange-track">
             <div class="o-mediarange-fill" />

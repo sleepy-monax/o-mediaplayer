@@ -1,4 +1,4 @@
-export default interface IMediaState {
+export interface IMediaState {
     /** Was the player started for the first time, default to true when autoplay is true */
     isStarted: boolean;
 

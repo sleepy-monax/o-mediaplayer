@@ -7,7 +7,7 @@ css`
 }
 `
 
-export default class Spacer extends Component {
+export class Spacer extends Component {
     static template = xml`
         <div clas="o-mediaplayer-spacer" />
     `;

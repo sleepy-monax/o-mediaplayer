@@ -1,4 +1,4 @@
-export default interface IPlaybackSettings {
+export interface IPlaybackSettings {
     src: string;
     autoplay: boolean;
     loop: boolean;

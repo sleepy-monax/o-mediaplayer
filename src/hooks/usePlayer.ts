@@ -1,10 +1,10 @@
 import { onMounted, useRef, useState } from "@odoo/owl";
 import { TOGGLE, Toggle } from "../utils/toggle";
-import getFullscreenElement from "../utils/getFullscreenElement";
-import IMediaPlayer from "../model/IMediaPlayer";
-import IPlaybackSettings from "../model/IPlaybackSettings";
-import IMediaState from "../model/IMediaState";
-import Ref from "../utils/ref";
+import { getFullscreenElement } from "../utils/getFullscreenElement";
+import { IMediaPlayer } from "../model/IMediaPlayer";
+import { IPlaybackSettings } from "../model/IPlaybackSettings";
+import { IMediaState } from "../model/IMediaState";
+import { Ref } from "../utils/ref";
 
 /**
  * Create a media player
@@ -12,7 +12,7 @@ import Ref from "../utils/ref";
  * @param settings Playback settings for the media player
  * @returns a media player object
  */
-export default function usePlayer(hostRef: Ref, settings: IPlaybackSettings): IMediaPlayer {
+export function usePlayer(hostRef: Ref, settings: IPlaybackSettings): IMediaPlayer {
     const state = useState<IMediaState>({
         isStarted: false,
         isReady: false,

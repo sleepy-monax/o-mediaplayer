@@ -1,9 +1,9 @@
 import { xml } from "@odoo/owl";
-import IconButton from "../icons/IconButton";
-import BaseControl from "./BaseControl";
+import { IconButton } from "../icons/IconButton";
+import { BaseControl } from "./BaseControl";
 import { TOGGLE } from "../utils/toggle";
 
-export default class PlayPauseControl extends BaseControl {
+export class PlayPauseControl extends BaseControl {
     static components = [IconButton]
     static template = xml`
         <IconButton t-if="player.isPlaying" icon="play" onClick="onClick" />

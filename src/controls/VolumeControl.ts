@@ -1,4 +1,4 @@
-import BaseControl from "./BaseControl";
+import { BaseControl } from "./BaseControl";
 
-export default class VolumControl extends BaseControl {
+export class VolumeControl extends BaseControl {
 }

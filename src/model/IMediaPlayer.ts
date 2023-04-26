@@ -1,7 +1,7 @@
 import { Toggle } from "../utils/toggle";
-import IMediaState from "./IMediaState";
+import { IMediaState } from "./IMediaState";
 
-export default interface IMediaPlayer extends IMediaState {
+export interface IMediaPlayer extends IMediaState {
     /** Reference to the video element */
     media: HTMLVideoElement | null;
 

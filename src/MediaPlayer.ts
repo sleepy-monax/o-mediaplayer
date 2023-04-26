@@ -1,16 +1,23 @@
 import { Component, useRef, xml } from "@odoo/owl";
-import usePlayer from "./hooks/usePlayer";
-import IPlaybackSettings from "./model/IPlaybackSettings";
-import IMediaPlayer from "./model/IMediaPlayer";
-import PlayerScafold from "./MediaScafold";
-import Spinner from "./icons/Spinner";
-import Spacer from "./components/Spacer";
-import PlayPauseControl from "./controls/PlayPauseControl";
-import MuteControl from "./controls/MuteControl";
-import FullscreenControl from "./controls/FullscreenControl";
-import ShareControl from "./controls/ShareControl";
-import VolumControl from "./controls/VolumControl";
-import TimeControl from "./controls/TimeControl";
+import { IPlaybackSettings } from "./model/IPlaybackSettings";
+import { IMediaPlayer } from "./model/IMediaPlayer";
+import { PlayerScafold } from "./MediaScafold";
+import { Spinner } from "./icons/Spinner";
+import { Spacer } from "./components";
+
+import {
+    PlayPauseControl,
+    MuteControl,
+    FullscreenControl,
+    ShareControl,
+    VolumeControl,
+    SeekControl
+} from "./controls";
+
+import {
+    useFormfactor,
+    usePlayer
+} from "./hooks";
 
 
 interface IMediaPlayerProps extends IPlaybackSettings {
@@ -27,7 +34,7 @@ interface IMediaPlayerProps extends IPlaybackSettings {
  * 
  * It also provides a set of controls that can be used to play media.
  */
-export default class MediaPlayer extends Component<IMediaPlayerProps> {
+export class MediaPlayer extends Component<IMediaPlayerProps> {
     static components = {
         PlayerScafold,
         Spinner,
@@ -36,8 +43,8 @@ export default class MediaPlayer extends Component<IMediaPlayerProps> {
         MuteControl,
         FullscreenControl,
         ShareControl,
-        VolumControl,
-        TimeControl
+        VolumeControl,
+        SeekControl
     };
 
     static template = xml`
@@ -48,11 +55,17 @@ export default class MediaPlayer extends Component<IMediaPlayerProps> {
             </t>
             
             <t t-set-slot="playing-lower">
-                <PlayPauseControl />
-                <MuteControl />
-                <VolumControl />
-                <MediaSpacer />
-                <FullscreenControl />
+                <VFlex>
+                    <SeekControl />
+
+                    <HFlex>
+                        <PlayPauseControl />
+                        <MuteControl />
+                        <VolumControl />
+                        <MediaSpacer />
+                        <FullscreenControl />
+                    </HFlex>
+                </VFlex>
             </t>
             
             <t t-set-slot="idle-center">
